@@ -25,6 +25,7 @@ font-family: 'Roboto Condensed', sans-serif; */
 
 html{
     overflow-x: hidden;
+    scroll-behavior:smooth;
 }
 
 body{
@@ -70,6 +71,11 @@ header{
    
 }
 
+.navbar__list a{
+    text-decoration: none;
+    color: black;
+}
+
 .sign__container{
    display: none;
 }
@@ -87,7 +93,7 @@ header{
     margin-right: 2em;
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 1px;
     background-color: white;
     border: none;
 }
@@ -109,6 +115,7 @@ header{
     background-color: white;
     width: 100%;
     opacity: 0;
+    transform: translateY(-150%);
 }
 
 .burger-list{
@@ -164,10 +171,12 @@ header{
 
 .title__container h1{
     font-size: 2.7em;
+    animation: leftSlide 2s ease;
 }
 
 .title__container h2{
     font-size: 1.3em;
+    animation: rightSlide 2s ease;
 }
 
 
@@ -220,6 +229,7 @@ header{
     border: 2px solid rgb(255, 255, 255);
     border-radius: 5px;
     z-index: 999;
+    background-color: grey;
 }
 
 .news-btn{
@@ -232,8 +242,14 @@ header{
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: bold;
     border-radius: 5px;
-   
     
+}
+
+.news1{
+ background-image: url(/Media/messi-cropped.png);
+ background-position: cover;
+ background-repeat: no-repeat;
+
 }
 
 /* ---------------- LEAGUES SECTION ---------------- */
@@ -288,7 +304,7 @@ header{
 /* ---------------- INTERNATIONAL SECTION ---------------- */
 .international__section{
     width: 100%;
-    height: 80vh;
+    height: 90vh;
     background-color: rgb(223, 223, 223);
     font-family: 'Roboto Condensed', sans-serif;
     display: flex;
@@ -447,4 +463,67 @@ footer{
 .news{
     width: 18em;
 }
+}
+
+
+
+
+
+/* ------------- ANIMATIONS AND HOVERS ------------- */
+.navbar__list li:hover{
+    cursor: pointer;
+    scale: 1.1;
+    text-decoration: 2px black overline;
+    transition: scale .5s ease;
+}
+
+.join-btn:hover , .sign-btn:hover, .social-container img:hover{
+    cursor: pointer;
+    transform: translateY(-2px);
+    background-color: rgb(225, 222, 31);
+    transition: transform .5s ease;
+}
+
+@keyframes leftSlide {
+    0%{transform: translateX(-250%);}
+    100%{transform: translateX(0%);}  
+}
+
+@keyframes rightSlide {
+    0%{transform: translateX(250%);}
+    100%{transform: translateX(0%);}
+}
+
+.news-btn:hover, .leagues-btn:hover, .leagues-list img:hover, .international-list img:hover, .contact-list li:hover, .news:hover{
+    scale: 1.1;
+    cursor: pointer;
+    transition: scale .5s ease;
+}
+
+.navbar__list li:not(:hover), .join-btn:not(:hover), .sign-btn:not(:hover), .social-container img:not(:hover) , .news-btn:not(:hover), .leagues-btn:not(:hover) , .leagues-list img:not(:hover) , .international-list img:not(:hover), .contact-list li:not(:hover), .news:not(:hover){
+
+    scale: 1;
+    transition: scale .3s ease-in-out;
+
+}
+
+.burger__container:hover{
+    cursor: pointer;
+}
+
+.burger-animation{
+    transform: translateY(0%);
+    transition: transform 1s ease;
+    opacity: 1;
+
+}
+
+.burger1X{
+    transform: rotate(-45deg);
+    transition: transform 1s ease;
+}
+
+.burger2X{
+    transform: rotate(45deg);
+    transition: transform 1s ease;
 }

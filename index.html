@@ -18,16 +18,17 @@
       rel="stylesheet"
     />
     <title>Footballissima</title>
+    <script defer src="/index.js"></script>
   </head>
   <body>
     <header>
       <nav class="navbar">
         <p class="logo">footballissima</p>
         <ul class="navbar__list">
-          <li>News</li>
-          <li>Leagues</li>
-          <li>Tournaments</li>
-          <li>Contact</li>
+          <a href="#news"><li>News</li></a>
+          <a href="#leagues"><li>Leagues</li></a>
+          <a href="#international"><li>Tournaments</li></a>
+          <a href="#contact"><li>Contact</li></a>
         </ul>
         <div class="sign__container">
           <button class="join-btn">Join us</button>
@@ -65,19 +66,19 @@
       </div>
     </header>
     <main>
-      <section class="news__section">
+      <section class="news__section" id="news">
         <img src="/Media/thomas-serer-r-xKieMqL34-unsplash.jpg" alt="" />
         <h2>Latest news</h2>
         <div class="news-container">
-          <div class="news"></div>
-          <div class="news"></div>
-          <div class="news"></div>
-          <div class="news"></div>
+          <div class="news news1"></div>
+          <div class="news news2"></div>
+          <div class="news news3"></div>
+          <div class="news news4"></div>
         </div>
         <button class="news-btn">More news <span>&#10140;</span></button>
       </section>
 
-      <section class="leagues__section">
+      <section class="leagues__section" id="leagues">
         <div class="leagues-title">
           <h2>Check the major leagues around the world</h2>
           <p>
@@ -96,11 +97,12 @@
         <button class="leagues-btn">More leagues <span>&#10140;</span></button>
       </section>
 
-      <section class="international__section">
+      <section class="international__section" id="international">
         <div class="international-title">
           <h2>Check the most important international competitions</h2>
           <p>
-            Follow your favorite team or your national team in international competitions and support them
+            Follow your favorite team or your national team in international
+            competitions and support them
           </p>
         </div>
         <div class="international-list">
@@ -121,7 +123,7 @@
           <li>News</li>
           <li>Leagues</li>
           <li>Competitions</li>
-          <li>Contact</li>
+          <li id="contact">Contact</li>
         </ul>
         <div class="social-container">
           <img src="/Media/twitter.png" alt="Twitter link" />
